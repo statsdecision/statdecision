@@ -7,11 +7,11 @@ Version sécurisée - Production Ready
 
 import os
 from pathlib import Path
-from decouple import config  # Doit être installé via requirements.txt
-import dj_database_url       # Doit être installé via requirements.txt
+import dj_database_url
 from django.urls import reverse_lazy
 import sys
 
+#from decouple import config
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'Moncabinet.wsgi.application'
 """
 
 DATABASES= {
-    'default': dj_database_url.parse(config('DATABASE_URL'))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 # ========================
 # PASSWORD VALIDATION
