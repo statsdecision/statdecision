@@ -7,11 +7,11 @@ Version sécurisée - Production Ready
 
 import os
 from pathlib import Path
-import dj_database_url
+from decouple import config  # Doit être installé via requirements.txt
+import dj_database_url       # Doit être installé via requirements.txt
 from django.urls import reverse_lazy
 import sys
 
-from decouple import config
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -196,4 +196,4 @@ LOGGING = {
 
 
 
-#AUTH_USER_MODEL = 'myapp.User'  # Vérifiez la casse exacte
+AUTH_USER_MODEL = 'myapp.User'  # Vérifiez la casse exacte
