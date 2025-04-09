@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ========================
 # SECURITY CONFIGURATION
 # ========================
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Détection automatique de l'environnement Render
 ON_RENDER = os.environ.get('RENDER', None) is not None
@@ -172,7 +172,7 @@ if ON_RENDER or not DEBUG:
 # CUSTOM SETTINGS
 # ========================
 SITE_NAME = "StatsDécision Consulting"
-SITE_DOMAIN = os.environ.get('SITE_DOMAIN', 'moncabinet.onrender.com')
+#SITE_DOMAIN = os.environ.get('SITE_DOMAIN', 'moncabinet.onrender.com')
 
 # ========================
 # LOGGING CONFIGURATION
